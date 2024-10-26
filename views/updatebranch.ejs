@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gudea:wght@400;700&display=swap">
+    <link rel=stylesheet href="main.css">
+    <title>Update student</title>
+</head>
+
+<body>
+	<%- include('common/header') %>
+	<div class="content">
+		<h1> Edit <%- student.Stu_FName %> <%- student.Stu_LName %> </h1>
+		<h3>
+			<%= message %>
+				<form method="post">
+					<label for="course">Update Course: </label>
+					<select class="form-control" name="Stu_Course" id="course" required>
+						<% courses.forEach( course=> { %>
+							<option value="<%= course.Crs_Code %>"
+								<%=course.Crs_Code===student.Stu_Course ? 'selected'
+								: "" %>>
+
+								<%= course.Crs_Title %>
+							</option>
+							<% }) %>
+
+					</select></p>
+					<p> <label for="Stu_Phone"> Update Phone: </label> <input type="tel"
+							value="<%- student.Stu_Phone%>" name="Stu_Phone" required> </p>
+					<input type="submit" value="Update">
+
+
+				</form>
+				</h1>
+	</div>
+	<%- include('common/footer') %>
+
+</body>
+
+</html>

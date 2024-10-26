@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gudea:wght@400;700&display=swap">
+    <link rel=stylesheet href="main.css">
+    <title>Search student</title>
+</head>
+
+<body>  
+    <% include('common/header') %>
+    <div class="content">
+        <h1>Society Adviser</h1>
+            <h3>Student: <%= student.Stu_FName %> <%= student.Stu_LName %></h3>
+            <p><strong>Hobbies:</strong> <%= studentHobbies.length > 0 ? studentHobbies.join(", ") : "None" %></p>
+            <p><strong>Societies:</strong> <%= studentSocieties.length > 0 ? studentSocieties.join(", ") : "None" %></p>
+            <p><strong>Recommended Society:</strong> <%= recommendedSociety.name %></p>
+            <p><strong>Description:</strong> <%= recommendedSociety.description %></p>
+            
+            <form method="post">
+                <input type="hidden" name="recommendedSociety" value="<%= recommendedSociety.name %>">
+                <button type="submit" name="decision" value="accept">Accept</button>
+                <button type="submit" name="decision" value="deny">Deny</button>
+            </form>
+    </div>
+    <% include('common/footer') %>
+</body>
+
+</html>

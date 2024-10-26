@@ -1,0 +1,41 @@
+    <!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gudea:wght@400;700&display=swap">
+        <link rel=stylesheet href="main.css">
+        <title>Uni Database</title>
+    </head>
+
+    <body>
+        <%- include('common/header') %>
+            <div class="content">
+                <h1>University Database Manager</h1>
+                <desc>View and update the university student database.</desc>
+                <h2 class = "sub">Total number per category</h2>
+                <div class="stats-frame">
+                    <div class="stat-box">
+                        <h2>Students</h2>
+                        <p class="stats"><%= studentCount %></p>
+                    </div>
+                    <div class="stat-box">
+                        <h2>Undergraduates</h2>
+                        <p class="stats"><%= undergraduateCount %></p>
+                    </div>
+                    <div class="stat-box">
+                        <h2>Postgraduates</h2>
+                        <p class="stats"><%= postgraduateCount %></p>
+                    </div>
+                    <div class="stat-box">
+                        <h2>Courses</h2>
+                        <p class="stats"><%= courseCount %></p>
+                    </div>
+                </div>
+            </div>
+            <%- include('common/footer') %>
+    </body>
+
+    </html>

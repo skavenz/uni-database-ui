@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gudea:wght@400;700&display=swap">
+    <link rel=stylesheet href="main.css">
+    <title>Society Adviser</title>
+</head>
+
+<body>
+    <%- include('common/header') %>
+    <div class="content">
+        <h1>Select student to use Recomendation System</h1>
+        <ul>
+            <% students.forEach((student) => { %>
+                <li>
+                    <a href="/societyadviser/<%= student.URN %>">
+                        <%= student.Stu_FName %> <%= student.Stu_LName %>
+                    </a>
+                </li>
+            <% }) %>
+        </ul>
+    </div>
+    <%- include('common/footer') %>
+</body>
+
+</html>

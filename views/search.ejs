@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gudea:wght@400;700&display=swap">
+    <link rel=stylesheet href="main.css">
+    <title>Search student</title>
+</head>
+
+<body>
+    <%- include('common/header') %>
+    <div class="content">
+        <h1>Search student by name</h1>
+
+        <form action="/search" method="post">
+            <label class = "gudea" for="studentName">Enter student name:</label>
+            <input type="text" id="studentName" name="studentName" required>
+            <button type="submit">Search</button>
+        </form>
+
+        <% if (searched) { %>
+            <% if (studentData) { %>
+                <h2 class = "bebas"> Search Result:</h2>
+                <ul>
+                    <li><strong>URN:</strong> <%= studentData.URN %></li>
+                    <li><strong>First Name:</strong> <%= studentData.Stu_FName %></li>
+                    <li><strong>Last Name:</strong> <%= studentData.Stu_LName %></li>
+                    <li><strong>Date of Birth:</strong> <%= studentData.Stu_DOB %></li>
+                    <li><strong>Phone:</strong> <%= studentData.Stu_Phone %></li>
+                    <li><strong>Course:</strong> <%= studentData.Stu_Course %></li>
+                    <li><strong>Student Type:</strong> <%= studentData.Stu_Type %></li>
+                </ul>
+            <% } else { %>
+                <p>No matching student found.</p>
+            <% } %>
+        <% } %>
+    </div>
+    <%- include('common/footer') %>
+</body>
+
+</html>

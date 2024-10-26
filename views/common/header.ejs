@@ -1,0 +1,19 @@
+<nav>
+  <ul>
+    <% if (currentPage !== 'home') { %>
+      <li><a href="/">Home</a></li>
+    <% } %>
+    <% if (currentPage !== 'search') { %>
+      <li><a href="/search">Search a student</a></li>
+    <% } %>
+    <% if (currentPage !== 'viewall') { %>
+      <li><a href="/viewall">View all student data</a></li>
+    <% } %>
+    <% if (currentPage !== 'update') { %>
+      <li><a href="/update">Update data</a></li>
+    <% } %>
+    <% if (currentPage !== 'societyadviser') { %>
+      <li><a href="/societyadviser">Society Recommendations</a></li>
+    <% } %>
+  </ul>
+</nav>
